@@ -1,0 +1,4 @@
+jslibraryboilerplate
+====================
+
+JavaScript Library Boilerplate
