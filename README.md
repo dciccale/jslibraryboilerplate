@@ -1,6 +1,6 @@
 # JavaScript Library Boilerplate
 
-An easy boilerplate for rolling your own JavaScript Library like [Kimbo](http://kimbojs.com), jQuery, Zepto, Prototype, etc.
+An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.
 
 The actual code is written in [TypeScript](http://www.typescriptlang.org).
 
