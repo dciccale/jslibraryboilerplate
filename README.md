@@ -2,10 +2,10 @@
 
 An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.
 
-The actual code is written in [TypeScript](http://www.typescriptlang.org).
+The actual code is written in [TypeScript](http://www.typescriptlang.org) and pure JavaScript.
 
-## Compile
-To compile the jslibraryboilerplate.ts file you will need [Node.js](http://nodejs.org)
+## Compile TypeScript
+To compile typescript `.ts` files you will need [Node.js](http://nodejs.org)
 
 If you already installed it, run this commmand-line to download TypeScript package:
 
@@ -13,14 +13,14 @@ If you already installed it, run this commmand-line to download TypeScript packa
 npm install -g typescript
 ```
 
-Now you can compile:
+Now you can compile `.ts` files.
 
 ```
-tsc jslibraryboilerplate.ts
+tsc jslibraryboilerplate_class.ts
 ```
 
 ## Usage
-Include jslibraryboilerplate.js file on an html file and you are done!
+Include *jslibraryboilerplate_class.js* file on an html file and you are done!
 
 ### Code example
 ```javascript
