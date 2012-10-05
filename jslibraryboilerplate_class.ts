@@ -9,9 +9,12 @@ class JSLB {
     return new JSLB.prototype.init(selector)
   }
   splice;
+  // default length of a JSLB object
   length: number;
   // handle the use of $(...)
   init (selector) {
+      // default length is 0
+      this.length = 0;
       // no selector, return empty JSLB object
       if (!selector) {
         return this;
@@ -31,6 +34,7 @@ class JSLB {
 
       // is css selector, query the dom
       if (typeof selector === 'string') {
+        // find elements, turn NodeList to array and push them to JSLB
         return [].push.apply(this, [].slice.call(document.querySelectorAll(selector)));
       }
 
@@ -77,6 +81,8 @@ class JSLB {
   }
 }
 
+// abbreviate "prototype" to "fn"
+Core['fn'] = Core.prototype;
 // the init method uses JSLB prototype and constructor
 JSLB.prototype.init.prototype = JSLB.prototype;
 JSLB.prototype.init.prototype.constructor = JSLB;
