@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>jslibraryboilerplate by dciccale</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/dciccale/jslibraryboilerplate">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>jslibraryboilerplate</h1>
+            <h2>JavaScript Library Boilerplate</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/dciccale/jslibraryboilerplate/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/dciccale/jslibraryboilerplate/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>JavaScript Library Boilerplate</h1>
+
+<p>An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.</p>
+
+<p>The actual code is written in <a href="http://www.typescriptlang.org">TypeScript</a>.</p>
+
+<h2>Compile</h2>
+
+<p>To compile the jslibraryboilerplate.ts file you will need <a href="http://nodejs.org">Node.js</a></p>
+
+<p>If you already installed it, run this commmand-line to download TypeScript package:</p>
+
+<pre><code>npm install -g typescript
+</code></pre>
+
+<p>Now you can compile:</p>
+
+<pre><code>tsc jslibraryboilerplate.ts
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Include jslibraryboilerplate.js file on an html file and you are done!</p>
+
+<h3>Code example</h3>
+
+<div class="highlight"><pre><span class="c1">// $(selector); you can use any valid CSS selector for getting elements from the document</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span> <span class="c1">// get all p elements of the document</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.test'</span><span class="p">);</span> <span class="c1">// all elements with class 'test'</span>
+<span class="c1">// iterate through 'li' elements to know if they are even or odd</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'is even'</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">'is odd'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>Add new methods</h2>
+
+<p>You can add the methods you need to work on the DOM</p>
+
+<h3>Code example</h3>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">highlight</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s1">'color'</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="c1">// highlight all 'strong' elements</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'strong'</span><span class="p">).</span><span class="nx">highlight</span><span class="p">(</span><span class="s1">'red'</span><span class="p">);</span>
+</pre></div>
+
+<p>That's all, go and roll your own JavaScript Library.</p>
+
+<h2>License</h2>
+
+<p>See <a href="https://raw.github.com/dciccale/jslibraryboilerplate/master/LICENSE.txt">LICENSE.txt</a></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/dciccale">dciccale</a> can be found on <a href="https://github.com/dciccale/jslibraryboilerplate">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
