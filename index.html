@@ -72,10 +72,12 @@
 
 <h3>Code example</h3>
 
-<div class="highlight"><pre><span class="c1">// $(selector); you can use any valid CSS selector for getting elements from the document</span>
+<div class="highlight"><pre><span class="c1">// $(selector); you can use any valid CSS selector</span>
+<span class="c1">// for getting elements from the document</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span> <span class="c1">// get all p elements of the document</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'.test'</span><span class="p">);</span> <span class="c1">// all elements with class 'test'</span>
-<span class="c1">// iterate through 'li' elements to know if they are even or odd</span>
+<span class="c1">// iterate through 'li' elements to know</span>
+<span class="c1">// if they are even or odd</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="s1">'is even'</span><span class="p">);</span>
