@@ -24,10 +24,12 @@ Include jslibraryboilerplate.js file on an html file and you are done!
 
 ### Code example
 ```javascript
-// $(selector); you can use any valid CSS selector for getting elements from the document
+// $(selector); you can use any valid CSS selector
+// for getting elements from the document
 $('p'); // get all p elements of the document
 $('.test'); // all elements with class 'test'
-// iterate through 'li' elements to know if they are even or odd
+// iterate through 'li' elements to know if they
+// are even or odd
 $('li').each(function (el, i) {
   if (i % 2 === 0) {
     alert('is even');
