@@ -3,10 +3,10 @@
  * Copyright (c) 2012 Denis Ciccale (@tdecs)
  * Released under MIT license (https://raw.github.com/dciccale/jslibraryboilerplate/master/LICENSE.txt)
  */
-(function () {
+(function (window) {
   var JSLB = function (selector) {
       // auto-create new instance without the 'new' keyword
-      return new JSLB.fn.init(selector);
+      return new JSLB.prototype.init(selector);
     },
     // helper methods
     push = [].push,
@@ -52,7 +52,7 @@
 
       // it's a function, call it when DOM is ready
       if (typeof selector === 'function') {
-        return new JSLB(document).ready(selector);
+        return JSLB(document).ready(selector);
       }
     },
 
@@ -109,5 +109,5 @@
   JSLB.prototype.splice = splice;
 
   // expose to global object
-  window['JSLB'] = window['$'] = JSLB;
+  window.JSLB = window.$ = JSLB;
 }(window));
