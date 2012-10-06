@@ -2,49 +2,95 @@
 
 An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.
 
-The actual code is written in [TypeScript](http://www.typescriptlang.org) and pure JavaScript.
+The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript](http://www.typescriptlang.org) and pure JavaScript.
 
-## Compile TypeScript
-To compile typescript `.ts` files you will need [Node.js](http://nodejs.org)
+## Compiling
+For compiling CoffeeScript or TypeScript you will need to install [Node.js](http://nodejs.org)
 
-If you already installed it, run this commmand-line to download TypeScript package:
+After installing Node.js you can compile the files throgh command-line
+
+### CoffeeScript
+Install CoffeeScript package:
 
 ```
 npm install -g typescript
 ```
 
-Now you can compile `.ts` files.
+Compile file:
+
+```
+coffee jslibraryboilerplate_coffee.coffee
+```
+
+### TypeScript
+Install TypeScript package:
+
+```
+npm install -g typescript
+```
+
+Compile file:
 
 ```
 tsc jslibraryboilerplate_class.ts
 ```
 
 ## Usage
-Include *jslibraryboilerplate_class.js* file on an html file and you are done!
+Include the compiled .js file (or the _vanilla.js file if you don't want to use other languages) on an html file and you are done!
 
-### Code example
-```javascript
-// $(selector); you can use any valid CSS selector
-// for getting elements from the document
-$('p'); // get all p elements of the document
-$('.test'); // all elements with class 'test'
-// iterate through 'li' elements to know if they
-// are even or odd
-$('li').each(function (el, i) {
-  if (i % 2 === 0) {
-    alert('is even');
-  } else {
-    alert('is odd');
-  }
-});
+## Demo
+
+### Copy, paste to an .html file and run
+
+```html
+<!doctype html>
+  <title>JavaScript Library Boilerplate</title>
+  <!-- include .js file (you may change the name) -->
+  <script src="jslibraryboilerplate.js"></script>
+  <script>
+    // wait for the dom be ready
+    $(function () {
+      // get all p elements
+      var ps = $('p');
+      console.log('There are ' + ps.length + ' paragraphs on the page');
+      // set some text for the empty paragraphs
+      $('.fillme').text('yeah!!');
+      // iterate p elements to know if they are even or odd
+      ps.each(function (i, el) {
+        var evenodd = i % 2 === 0 ? ' even' : ' odd';
+        this.textContent += ' (' + i +  evenodd + ')';
+      });
+    });
+  </script>
+
+  <p>This is a paragraph</p>
+  <p>Another p</p>
+
+  <p class="fillme"></p>
+  <p class="fillme"></p>
+  <p class="fillme"></p>
 ```
 
-## Add new methods
-You can add the methods you need to work on the DOM
+### $(...)
 
-### Code example
+Use any valid CSS selector for getting elements from the document
+
+```javascript
+// all p elements
+$('p');
+// all elements with class 'test'
+$('.test');
+// checkboxes
+$('input[type="checkbox"]');
+```
+
+## Adding new methods
+You can add any method you need to work with a JSLB DOM collection
+
+### Example
 ```javascript
 $.fn.highlight = function (color) {
+  color = color || 'yellow'
   return this.each(function () {
     this.style.setProperty('color', color);
   });
