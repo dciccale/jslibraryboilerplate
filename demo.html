@@ -1,0 +1,37 @@
+<!doctype html>
+  <title>JavaScript Library Boilerplate</title>
+  <!-- include .js file (you may change the name) -->
+  <script src="jslibraryboilerplate.js"></script>
+  <script>
+    // wait for the dom be ready
+    $(function () {
+      // get all p elements
+      var ps = $('p');
+      console.log('There are ' + ps.length + ' paragraphs on the page');
+      // set some text for the empty paragraphs
+      $('.fillme').text('yeah!!');
+      // iterate p elements to know if they are even or odd
+      ps.each(function (i, el) {
+        var evenodd = i % 2 === 0 ? ' even' : ' odd';
+        this.textContent += ' (' + i +  evenodd + ')';
+      });
+    });
+  </script>
+
+  <p>This is a paragraph</p>
+  <p>Another p</p>
+
+  <p class="fillme"></p>
+  <p class="fillme"></p>
+  <p class="fillme"></p>
+
+  <script>
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script>
+    try {
+      var pageTracker = _gat._getTracker("UA-24098807-7");
+    pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
