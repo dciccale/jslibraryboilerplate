@@ -36,11 +36,24 @@ tsc jslibraryboilerplate_class.ts
 ```
 
 ## Usage
-Include the compiled .js file (or the _vanilla.js file if you don't want to use other languages) on an html file and you are done!
+Include the ´.js´ file in an html document and you are done!
+
+## $(...)
+
+Use any valid CSS selector for getting elements from the document
+
+```javascript
+// all p elements
+$('p');
+// all elements with class 'test'
+$('.test');
+// checkboxes
+$('input[type="checkbox"]');
+```
 
 ## Demo
 
-### Copy, paste to an .html file and run
+### Copy, paste to an .html file and run [(Live demo)](http://dciccale.github.com/jslibraryboilerplate/demo.html)
 
 ```html
 <!doctype html>
@@ -69,19 +82,6 @@ Include the compiled .js file (or the _vanilla.js file if you don't want to use 
   <p class="fillme"></p>
   <p class="fillme"></p>
   <p class="fillme"></p>
-```
-
-### $(...)
-
-Use any valid CSS selector for getting elements from the document
-
-```javascript
-// all p elements
-$('p');
-// all elements with class 'test'
-$('.test');
-// checkboxes
-$('input[type="checkbox"]');
 ```
 
 ## Adding new methods
