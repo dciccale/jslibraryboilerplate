@@ -17,17 +17,6 @@
         $('#main_content').headsmart()
       })
     </script>
-    <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-24098807-7']);
-      _gaq.push(['_trackPageview']);
-    
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
     <title>jslibraryboilerplate by dciccale</title>
   </head>
 
@@ -61,50 +50,97 @@
 
 <p>An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.</p>
 
-<p>The actual code is written in <a href="http://www.typescriptlang.org">TypeScript</a> and pure JavaScript.</p>
+<p>The code is written in <a href="http://www.coffeescript.org">CoffeeScript</a>, <a href="http://www.typescriptlang.org">TypeScript</a> and pure JavaScript.</p>
 
-<h2>Compile</h2>
+<h2>Compiling</h2>
 
-<p>To compile <code>.ts</code> files you will need <a href="http://nodejs.org">Node.js</a></p>
+<p><strong>Skip this if you want to use pure JavaScript version</strong></p>
 
-<p>If you already installed it, run this commmand-line to download TypeScript package:</p>
+<p>For compiling CoffeeScript or TypeScript you will need to install <a href="http://nodejs.org">Node.js</a></p>
+
+<p>After installing Node.js you can compile the files throgh command-line</p>
+
+<h3>CoffeeScript</h3>
+
+<p>Install CoffeeScript package:</p>
 
 <pre><code>npm install -g typescript
 </code></pre>
 
-<p>Now you can compile:</p>
+<p>Compile file:</p>
+
+<pre><code>coffee jslibraryboilerplate_coffee.coffee
+</code></pre>
+
+<h3>TypeScript</h3>
+
+<p>Install TypeScript package:</p>
+
+<pre><code>npm install -g typescript
+</code></pre>
+
+<p>Compile file:</p>
 
 <pre><code>tsc jslibraryboilerplate_class.ts
 </code></pre>
 
 <h2>Usage</h2>
 
-<p>Include <em>jslibraryboilerplate_class.js</em> file on an html file and you are done!</p>
+<p>Include the ´.js´ file in an html document and you are done!</p>
 
-<h3>Code example</h3>
+<h2>$(...)</h2>
 
-<div class="highlight"><pre><span class="c1">// $(selector); you can use any valid CSS selector</span>
-<span class="c1">// for getting elements from the document</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span> <span class="c1">// get all p elements of the document</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'.test'</span><span class="p">);</span> <span class="c1">// all elements with class 'test'</span>
-<span class="c1">// iterate through 'li' elements to know</span>
-<span class="c1">// if they are even or odd</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'li'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s1">'is even'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s1">'is odd'</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<p>Use any valid CSS selector for getting elements from the document</p>
+
+<div class="highlight"><pre><span class="c1">// all p elements</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span>
+<span class="c1">// all elements with class 'test'</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.test'</span><span class="p">);</span>
+<span class="c1">// checkboxes</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'input[type="checkbox"]'</span><span class="p">);</span>
 </pre></div>
 
-<h2>Add new methods</h2>
+<h2>Demo</h2>
 
-<p>You can add the methods you need to work on the DOM</p>
+<h3>Copy, paste to an .html file and run <a href="http://dciccale.github.com/jslibraryboilerplate/demo.html">(Live demo)</a>
+</h3>
 
-<h3>Code example</h3>
+<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+  <span class="nt">&lt;title&gt;</span>JavaScript Library Boilerplate<span class="nt">&lt;/title&gt;</span>
+  <span class="c">&lt;!-- include .js file (you may change the name) --&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jslibraryboilerplate.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="c1">// wait for the dom be ready</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// get all p elements</span>
+      <span class="kd">var</span> <span class="nx">ps</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'p'</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'There are '</span> <span class="o">+</span> <span class="nx">ps</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="s1">' paragraphs on the page'</span><span class="p">);</span>
+      <span class="c1">// set some text for the empty paragraphs</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">'.fillme'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s1">'yeah!!'</span><span class="p">);</span>
+      <span class="c1">// iterate p elements to know if they are even or odd</span>
+      <span class="nx">ps</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">evenodd</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">?</span> <span class="s1">' even'</span> <span class="o">:</span> <span class="s1">' odd'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">+=</span> <span class="s1">' ('</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span>  <span class="nx">evenodd</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">;</span>
+      <span class="p">});</span>
+    <span class="p">});</span>
+  <span class="nt">&lt;/script&gt;</span>
+
+  <span class="nt">&lt;p&gt;</span>This is a paragraph<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Another p<span class="nt">&lt;/p&gt;</span>
+
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"fillme"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"fillme"</span><span class="nt">&gt;&lt;/p&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"fillme"</span><span class="nt">&gt;&lt;/p&gt;</span>
+</pre></div>
+
+<h2>Adding new methods</h2>
+
+<p>You can add any method you need to work with a JSLB DOM collection</p>
+
+<h3>Example</h3>
 
 <div class="highlight"><pre><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">highlight</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span> <span class="o">||</span> <span class="s1">'yellow'</span>
   <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s1">'color'</span><span class="p">,</span> <span class="nx">color</span><span class="p">);</span>
   <span class="p">});</span>
@@ -135,6 +171,16 @@
 
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-24098807-7");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
