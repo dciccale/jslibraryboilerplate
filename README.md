@@ -2,7 +2,7 @@
 
 An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.
 
-The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript](http://www.typescriptlang.org) and pure JavaScript.
+The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript](http://www.typescriptlang.org) and **pure JavaScript**.
 
 ## Compiling
 **Skip this if you want to use pure JavaScript version**
