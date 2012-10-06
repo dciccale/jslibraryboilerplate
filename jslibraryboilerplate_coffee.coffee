@@ -61,8 +61,7 @@ class JSLB
   # sample method to change text of an element
   text: (value) ->
     # no element
-    if !this[0]
-      return this
+    return this if !this[0]
 
     # get value
     if !value
