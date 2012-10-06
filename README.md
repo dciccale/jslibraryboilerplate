@@ -15,7 +15,7 @@ After installing Node.js you can compile the files throgh command-line
 Install CoffeeScript package:
 
 ```
-npm install -g typescript
+npm install -g coffee-script
 ```
 
 Compile file:
