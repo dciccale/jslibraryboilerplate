@@ -34,8 +34,10 @@ npm install -g typescript
 Compile file:
 
 ```
-tsc jslibraryboilerplate_class.ts
+tsc jslibraryboilerplate_module.ts
 ```
+
+You can also compile the ´_class.ts´ file, they just differ on syntax.
 
 ## Usage
 Include the ´.js´ file in an html document and you are done!
