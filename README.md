@@ -15,26 +15,26 @@ After installing Node.js you can compile the files throgh command-line
 Install CoffeeScript package:
 
 ```bash
-npm install -g coffee-script
+$ npm install -g coffee-script
 ```
 
 Compile file:
 
 ```bash
-coffee jslibraryboilerplate_coffee.coffee
+$ coffee jslibraryboilerplate_coffee.coffee
 ```
 
 ### TypeScript
 Install TypeScript package:
 
 ```bash
-npm install -g typescript
+$ npm install -g typescript
 ```
 
 Compile file:
 
 ```bash
-tsc jslibraryboilerplate_module.ts
+$ tsc jslibraryboilerplate_module.ts
 ```
 
 You can also compile the `_class.ts` file, they just differ on syntax.
