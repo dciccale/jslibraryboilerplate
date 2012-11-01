@@ -5,7 +5,9 @@ An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, 
 The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript](http://www.typescriptlang.org) and **pure JavaScript**.
 
 ## Compiling
+<hr>
 **Skip this if you want to use pure JavaScript version**
+<hr>
 
 For compiling CoffeeScript or TypeScript you will need to install [Node.js](http://nodejs.org)
 
