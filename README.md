@@ -1,6 +1,8 @@
 # JavaScript Library Boilerplate
 
-An easy boilerplate for rolling your own JavaScript Library like jQuery, Zepto, Prototype, etc.
+JavaScript Library Boilerplate helps you roll your own js library with a tiny and robust core base. 
+
+Create your own library such as jQuery, Zepto, Prototype, etc, very easy and adding your own methods.
 
 The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript](http://www.typescriptlang.org) and **pure JavaScript**.
 
