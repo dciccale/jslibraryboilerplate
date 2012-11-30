@@ -8,7 +8,7 @@ The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript]
 
 ## Compiling
 <hr>
-**Skip this if you want to use pure JavaScript version**
+**Skip to Usage section if you want to use pure JavaScript version**
 <hr>
 
 For compiling CoffeeScript or TypeScript you will need to install [Node.js](http://nodejs.org)
