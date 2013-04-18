@@ -1,48 +1,48 @@
 /*!
  * JavaScript Library Boilerplate
- * Copyright (c) 2012 Denis Ciccale (@tdecs)
+ * Copyright (c) 2013 Denis Ciccale (@tdecs)
  * Released under MIT license (https://raw.github.com/dciccale/jslibraryboilerplate/master/LICENSE.txt)
  */
 class JSLB {
-  // auto-create new instance without the 'new' keyword
+  // handle the use of $(...)
   constructor (selector) {
-    return new JSLB.prototype.init(selector)
+    // auto-create new instance without the 'new' keyword
+    if (!(this instanceof JSLB)) {
+      return new JSLB(selector)
+    }
+
+    // no selector, return empty JSLB object
+    if (!selector) {
+      return this;
+    }
+
+    // already a JSLB object
+    if (selector instanceof JSLB) {
+      return selector;
+    }
+
+    // already a dom element?
+    if (selector.nodeType) {
+      this[0] = selector;
+      this.length = 1;
+      return this;
+    }
+
+    // is css selector, query the dom
+    if (typeof selector === 'string') {
+      // find elements, turn NodeList to array and push them to JSLB
+      return [].push.apply(this, [].slice.call(document.querySelectorAll(selector)));
+    }
+
+    // it's a function, call it when DOM is ready
+    if (typeof selector === 'function') {
+      return new JSLB(document).ready(selector);
+    }
   }
   splice;
-  // default length of a JSLB object
-  length: number;
-  // handle the use of $(...)
-  init (selector) {
-      // default length is 0
-      this.length = 0;
-      // no selector, return empty JSLB object
-      if (!selector) {
-        return this;
-      }
+  // default length of a JSLB object is 0
+  length: number = 0;
 
-      // already a JSLB object
-      if (selector instanceof JSLB) {
-        return selector;
-      }
-
-      // already a dom element?
-      if (selector.nodeType) {
-        this[0] = selector;
-        this.length = 1;
-        return this;
-      }
-
-      // is css selector, query the dom
-      if (typeof selector === 'string') {
-        // find elements, turn NodeList to array and push them to JSLB
-        return [].push.apply(this, [].slice.call(document.querySelectorAll(selector)));
-      }
-
-      // it's a function, call it when DOM is ready
-      if (typeof selector === 'function') {
-        return new JSLB(document).ready(selector);
-      }
-  }
   // document ready method
   ready (callback) {
     // first check if already loaded
@@ -82,10 +82,7 @@ class JSLB {
 }
 
 // abbreviate "prototype" to "fn"
-Core['fn'] = Core.prototype;
-// the init method uses JSLB prototype and constructor
-JSLB.prototype.init.prototype = JSLB.prototype;
-JSLB.prototype.init.prototype.constructor = JSLB;
+JSLB['fn'] = JSLB.prototype;
 // just to have an array like instanceof JSLB object
 JSLB.prototype.splice = [].splice;
 

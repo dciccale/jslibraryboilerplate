@@ -1,68 +1,61 @@
 /*!
  * JavaScript Library Boilerplate
- * Copyright (c) 2012 Denis Ciccale (@tdecs)
+ * Copyright (c) 2013 Denis Ciccale (@tdecs)
  * Released under MIT license (https://raw.github.com/dciccale/jslibraryboilerplate/master/LICENSE.txt)
  */
 (function (window) {
-  var JSLB = function (selector) {
-      // auto-create new instance without the 'new' keyword
-      return new JSLB.prototype.init(selector);
-    },
+  var document = window.document,
     // helper methods
     push = [].push,
     slice = [].slice,
     splice = [].splice,
     forEach = [].forEach;
 
+  // handle the use of $(...)
+  function JSLB(selector) {
+
+    // auto-create new instance without the 'new' keyword
+    if (!(this instanceof JSLB)) {
+      return new JSLB.prototype.init(selector);
+    }
+
+    // no selector, return empty JSLB object
+    if (!selector) {
+      return this;
+    }
+
+    // already a JSLB object
+    if (selector instanceof JSLB) {
+      return selector;
+    }
+
+    // already a dom element?
+    if (selector.nodeType) {
+      this[0] = selector;
+      this.length = 1;
+      return this;
+    }
+
+    // is css selector, query the dom
+    if (typeof selector === 'string') {
+      // find elements, turn NodeList to array and push them to JSLB
+      return push.apply(this, slice.call(document.querySelectorAll(selector)));
+    }
+
+    // it's a function, call it when DOM is ready
+    if (typeof selector === 'function') {
+      return JSLB(document).ready(selector);
+    }
+  };
+
   JSLB.prototype = {
-    constructor: JSLB,
-
-    // handle the use of $(...)
-    init: function (selector) {
-
-      // no selector, return empty JSLB object
-      if (!selector) {
-        return this;
-      }
-
-      // already a JSLB object
-      if (selector instanceof JSLB) {
-        return selector;
-      }
-
-      // already a dom element?
-      if (selector.nodeType) {
-        this[0] = selector;
-        this.length = 1;
-        return this;
-      }
-
-      // optimize finding body or head elements
-      if (selector === 'body' || selector === 'head') {
-        this[0] = document[selector];
-        this.length = 1;
-        return this;
-      }
-
-      // is css selector, query the dom
-      if (typeof selector === 'string') {
-        // find elements, turn NodeList to array and push them to JSLB
-        return push.apply(this, slice.call(document.querySelectorAll(selector)));
-      }
-
-      // it's a function, call it when DOM is ready
-      if (typeof selector === 'function') {
-        return JSLB(document).ready(selector);
-      }
-    },
-
     // default length of a JSLB object is 0
     length: 0,
 
     // document ready method
     ready: function (callback) {
       // first check if already loaded
-      if (/complete|loaded|interactive/.test(document.readyState)) {
+      if (/t/.test(document.readyState)) {
         callback(JSLB);
 
       // listen when it loads
@@ -80,31 +73,28 @@
       });
     },
 
-    // sample method to change text of an element
+    // sample method to get/set the text of an element
     text: function (value) {
-        // no element
-        if (!this[0]) {
-          return this;
-        }
-
-        // get value
-        if (!value) {
-          return this[0].textContent;
-
-        // set value to all elements on the collection
-        } else {
-          return this.each(function () {
-            this.textContent = value;
-          });
-        }
+      // no element
+      if (!this[0]) {
+        return this;
       }
+
+      // get value
+      if (!value) {
+        return this[0].textContent;
+
+      // set value to all elements on the collection
+      } else {
+        return this.each(function () {
+          this.textContent = value;
+        });
+      }
+    }
   };
 
   // abbreviate "prototype" to "fn"
   JSLB.fn = JSLB.prototype;
-  // the init method uses JSLB prototype and constructor
-  JSLB.prototype.init.prototype = JSLB.prototype;
-  JSLB.prototype.init.prototype.constructor = JSLB;
   // just to have an array like instanceof JSLB object
   JSLB.prototype.splice = splice;
 
