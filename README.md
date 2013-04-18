@@ -8,7 +8,7 @@ The code is written in [CoffeeScript](http://www.coffeescript.org), [TypeScript]
 
 ## Compiling
 <hr>
-**Skip this if you want to use pure JavaScript version**
+**Skip to Usage section if you want to use pure JavaScript version**
 <hr>
 
 For compiling CoffeeScript or TypeScript you will need to install [Node.js](http://nodejs.org)
@@ -38,12 +38,8 @@ $ npm install -g typescript
 Compile file:
 
 ```bash
-$ tsc jslibraryboilerplate_module.ts
+$ tsc jslibraryboilerplate_class.ts
 ```
-
-You can also compile the `_class.ts` file, they just differ on syntax.
-
-<hr>
 
 ## Usage
 Include the ´.js´ file in an html document and you are done!
