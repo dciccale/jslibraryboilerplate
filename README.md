@@ -42,7 +42,7 @@ $ tsc jslibraryboilerplate_class.ts
 ```
 
 ## Usage
-Include the ´.js´ file in an html document and you are done!
+Include the `.js` file in an html document and you are done!
 
 ## $(...)
 
