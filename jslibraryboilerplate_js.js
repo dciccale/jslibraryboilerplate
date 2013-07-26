@@ -16,7 +16,7 @@
 
     // auto-create new instance without the 'new' keyword
     if (!(this instanceof JSLB)) {
-      return new JSLB.prototype.init(selector);
+      return new JSLB(selector);
     }
 
     // no selector, return empty JSLB object
