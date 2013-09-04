@@ -59,7 +59,7 @@ $('input[type="checkbox"]');
 
 ## Demo
 
-### Copy, paste to an .html file and run [(Live demo)](http://dciccale.github.com/jslibraryboilerplate/demo.html)
+### Copy, paste to an .html file and run [(Live demo)](http://denis.io/jslibraryboilerplate/demo.html)
 
 ```html
 <!doctype html>
