@@ -1,6 +1,6 @@
 # JavaScript Library Boilerplate
 
-JavaScript Library Boilerplate helps you roll your own js library with a tiny and robust core base. 
+JavaScript Library Boilerplate helps you roll your own js library with a tiny and robust core base.
 
 Create your own library such as jQuery, Zepto, Prototype, etc, very easy and adding your own methods.
 
@@ -25,7 +25,7 @@ $ npm install -g coffee-script
 Compile file:
 
 ```bash
-$ coffee jslibraryboilerplate_coffee.coffee
+$ coffee jslibraryboilerplate.coffee
 ```
 
 ### TypeScript
@@ -38,7 +38,7 @@ $ npm install -g typescript
 Compile file:
 
 ```bash
-$ tsc jslibraryboilerplate_class.ts
+$ tsc jslibraryboilerplate.ts
 ```
 
 ## Usage
