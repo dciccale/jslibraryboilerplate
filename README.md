@@ -69,11 +69,15 @@ $('input[type="checkbox"]');
   <script>
     // wait for the dom be ready
     $(function () {
+    
       // get all p elements
       var ps = $('p');
+      
       console.log('There are ' + ps.length + ' paragraphs on the page');
+      
       // set some text for the empty paragraphs
       $('.fillme').text('yeah!!');
+      
       // iterate p elements to know if they are even or odd
       ps.each(function (i, el) {
         var evenodd = i % 2 === 0 ? ' even' : ' odd';
